@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+   <h2 padding-horizontal ion-text >
+        <strong>Home</strong> 
+      </h2>
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content text-center class="cards-bg">
+
+
+  <ion-card *ngFor="let menu of productInfo" id="{{menu.id}}">
+
+   
+
+    <ion-card-content>
+      <ion-card-title style="color:#d52e41">
+        {{menu.name}}
+      </ion-card-title>
+      <p>
+     
+	  <ion-row no-padding>
+	   <ion-col>
+       Today's Usage
+      </ion-col>
+	 
+      <ion-col text-center>
+        {{menu.today}}
+      </ion-col>
+	   </ion-row>
+	    <ion-row no-padding>
+		 <ion-col>
+       Total Usage
+      </ion-col>
+	 
+	  <ion-col text-center>
+         {{menu.total}}
+      </ion-col>
+	  </ion-row>
+	     <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start (click)=edit(menu)>
+          <ion-icon name='cog'></ion-icon>
+          Edit
+        </button>
+      </ion-col>
+	   <ion-col text-center>
+	   
+     
+        <button ion-button clear small color="danger" icon-start (click)=log(menu)>
+          <ion-icon name='cog'></ion-icon>
+          {{status}}
+        </button>
+      </ion-col>
+      </ion-row>
+
+</ion-card-content>
+
+  </ion-card>
+  
+
+  <button ion-button icon-start class="add-menu" tappable (click)="add()">
+  <ion-icon name="add"></ion-icon>
+  Add Device
+</button>
+ 
+
+</ion-content>
+   

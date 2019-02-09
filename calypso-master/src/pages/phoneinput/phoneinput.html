@@ -1,0 +1,37 @@
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      
+      <h2 ion-text class="text-primary" style="color:black">
+        <strong>Autoi</strong> 
+      </h2>
+    </div>
+
+    <!-- Login form -->
+   
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="phone" item-start class="text-primary"></ion-icon>
+          Phone
+        </ion-label>
+        <ion-input type="phone" [(ngModel)]="userData.phone"></ion-input>
+      </ion-item>
+
+    
+    <div text-center class="login-button">
+          <button ion-button icon-start color="primary" tappable  (click)="continue()">
+        <ion-icon name="log-in"></ion-icon>
+        Continue
+      </button>
+
+      
+    </div>
+
+
+    <!-- Other links -->
+
+  </div>
+</ion-content>

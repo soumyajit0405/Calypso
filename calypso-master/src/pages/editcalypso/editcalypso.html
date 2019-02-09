@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="primary">
+     <ion-title padding-horizontal ion-text style="color:#d52e41; padding-left:6em"><strong> Add Calypso </strong></ion-title>   
+     </ion-navbar>
+   </ion-header>
+
+   <ion-content padding id="addmenu1">
+
+
+       
+          <ion-item>
+              <ion-label>Calypso Name</ion-label>
+              <ion-input type="text" placeholder="" [(ngModel)]="calypsoData.name"></ion-input>
+            </ion-item>
+
+         
+          <div padding-horizontal text-center class="marginTop2">
+              <button ion-button round outline tappable (click)="edit()">Save</button>
+              </div>
+
+  </ion-content>

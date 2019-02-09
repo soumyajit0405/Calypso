@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title
+    padding-horizontal ion-text style="color:#d52e41; padding-left:4em">
+        <strong>Register User</strong> 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center class="whole_signup_page">
+
+
+  <div class="signup_content">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Full Name</ion-label>
+        <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>email</ion-label>
+        <ion-input type="email" [(ngModel)]="userData.email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input type="tel" [(ngModel)]="userData.phone"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!-- <button ion-button color="primary">Login</button> -->
+  <div text-center class="register">
+  <button ion-button icon-start color="primary" tappable (click)="register()">
+      <ion-icon name="sign-up"></ion-icon>
+      REGISTER
+    </button>
+  </div>
+
+   
+    <ion-footer>
+        <ion-toolbar text-center transparent>
+            <span ion-text color="primary" tappable (click)="login()">Already registered? <strong>Login</strong></span>
+        </ion-toolbar>
+      </ion-footer>
+  </ion-content>
