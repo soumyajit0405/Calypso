@@ -4,6 +4,7 @@ import {AddcalypsoPage} from "../addcalypso/addcalypso";
 import {ActionService} from "../../providers/action-service";
 import {EditcalypsoPage} from "../editcalypso/editcalypso";
 import {StoreService} from "../../providers/store-service";
+import {App} from 'ionic-angular';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -12,16 +13,23 @@ export class HomePage {
 productInfo : any;
 status : any;
 resposeData : any;
-  constructor(public navCtrl: NavController,public actionService : ActionService,private store: StoreService,private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController,public actionService : ActionService,private store: StoreService,private alertCtrl: AlertController,public app: App) {
 let inputData={};
 	 // inputData["userId"]="1";
+	 if(localStorage.getItem("phone")!=null && localStorage.getItem("phone")!="NA")
+	 {
 	  inputData["phone"]=localStorage.getItem("phone");
 	this.actionService.getDevices(inputData).then((result) =>{
 		
     this.productInfo = result["response"];
 	this.status = "ON";
 	});
-	
+	 }
+	 else{
+		  localStorage.setItem("phone","NA");
+	  this.app.getRootNav().setRoot(PhoneinputPage);
+
+	 }
 
   }
 add()
