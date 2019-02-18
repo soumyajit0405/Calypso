@@ -32,7 +32,7 @@ import { AddcalypsoPage } from '../pages/addcalypso/addcalypso';
 import { ChangepasswordPage } from '../pages/changepassword/changepassword';
 import { EditcalypsoPage } from '../pages/editcalypso/editcalypso';
 
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { EditcalypsoPage } from '../pages/editcalypso/editcalypso';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),HttpClientModule,HttpModule
+    IonicModule.forRoot(MyApp),HttpClientModule,HttpModule,ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

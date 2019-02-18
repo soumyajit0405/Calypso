@@ -1,30 +1,25 @@
-
 <ion-header>
-
   <ion-navbar>
-    <ion-title>metrics</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Metrics
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
-
-  <h1>This Week's Water Usage in your house</h1>
-  <h2>220L</h2>
-  <h1>This week's avg water usage in a hyderabad house </h1>
-  <h2>220L</h2>
-  <h1>This months's Water Usage in your house</h1>
-  <h2>1000L</h2>
-  <h1>This month's avg water usage in a hyderabad house</h1>
-  <h2>1000L</h2>
-  
-  <h1>Your Average Daily Usage</h1>
-  <h2>220L</h2>
-  <h1>Your Average weekly usage</h1>
-  <h2>1000L</h2>
-  <h1>Your average monthly usage</h1>
-  <h2>1000L</h2>
-  
-
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+   
+  </div>
 </ion-content>

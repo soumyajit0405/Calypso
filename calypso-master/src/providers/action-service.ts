@@ -107,4 +107,18 @@ export class ActionService {
   }
    
   
+  getMetrics(credentials){
+    return new Promise((resolve, reject) =>{
+      let headers = new Headers();
+      this.http.post('https://www.autoiinnovations.com/rest/calypsoAction/getMetrics', credentials, {headers: headers}).
+      subscribe(res =>{
+        resolve(res.json());
+      }, (err) =>{
+        reject(err);
+      });
+
+    });
+
+  }
+  
 }

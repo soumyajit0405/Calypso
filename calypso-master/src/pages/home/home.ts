@@ -5,6 +5,7 @@ import {ActionService} from "../../providers/action-service";
 import {EditcalypsoPage} from "../editcalypso/editcalypso";
 import {StoreService} from "../../providers/store-service";
 import {App} from 'ionic-angular';
+import {PhoneinputPage} from "../phoneinput/phoneinput";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
